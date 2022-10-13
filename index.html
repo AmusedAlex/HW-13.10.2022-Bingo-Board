@@ -9,236 +9,7 @@
   </head>
   <body>
     <h1>Bingo Board</h1>
-    <div class="full-board">
-      <!-- <div>
-        <h2>1</h2>
-      </div>
-      <div>
-        <h2>2</h2>
-      </div>
-      <div>
-        <h2>3</h2>
-      </div>
-      <div>
-        <h2>4</h2>
-      </div>
-      <div>
-        <h2>5</h2>
-      </div>
-      <div>
-        <h2>6</h2>
-      </div>
-      <div>
-        <h2>7</h2>
-      </div>
-      <div>
-        <h2>8</h2>
-      </div>
-      <div>
-        <h2>9</h2>
-      </div>
-      <div>
-        <h2>10</h2>
-      </div>
-      <div>
-        <h2>11</h2>
-      </div>
-      <div>
-        <h2>12</h2>
-      </div>
-      <div>
-        <h2>13</h2>
-      </div>
-      <div>
-        <h2>14</h2>
-      </div>
-      <div>
-        <h2>15</h2>
-      </div>
-      <div>
-        <h2>16</h2>
-      </div>
-      <div>
-        <h2>17</h2>
-      </div>
-      <div>
-        <h2>18</h2>
-      </div>
-      <div>
-        <h2>19</h2>
-      </div>
-      <div>
-        <h2>20</h2>
-      </div>
-      <div>
-        <h2>21</h2>
-      </div>
-      <div>
-        <h2>22</h2>
-      </div>
-      <div>
-        <h2>23</h2>
-      </div>
-      <div>
-        <h2>24</h2>
-      </div>
-      <div>
-        <h2>25</h2>
-      </div>
-      <div>
-        <h2>26</h2>
-      </div>
-      <div>
-        <h2>27</h2>
-      </div>
-      <div>
-        <h2>28</h2>
-      </div>
-      <div>
-        <h2>29</h2>
-      </div>
-      <div>
-        <h2>30</h2>
-      </div>
-      <div>
-        <h2>31</h2>
-      </div>
-      <div>
-        <h2>32</h2>
-      </div>
-      <div>
-        <h2>33</h2>
-      </div>
-      <div>
-        <h2>34</h2>
-      </div>
-      <div>
-        <h2>35</h2>
-      </div>
-      <div>
-        <h2>36</h2>
-      </div>
-      <div>
-        <h2>37</h2>
-      </div>
-      <div>
-        <h2>38</h2>
-      </div>
-      <div>
-        <h2>39</h2>
-      </div>
-      <div>
-        <h2>40</h2>
-      </div>
-      <div>
-        <h2>41</h2>
-      </div>
-      <div>
-        <h2>42</h2>
-      </div>
-      <div>
-        <h2>43</h2>
-      </div>
-      <div>
-        <h2>44</h2>
-      </div>
-      <div>
-        <h2>45</h2>
-      </div>
-      <div>
-        <h2>46</h2>
-      </div>
-      <div>
-        <h2>47</h2>
-      </div>
-      <div>
-        <h2>48</h2>
-      </div>
-      <div>
-        <h2>49</h2>
-      </div>
-      <div>
-        <h2>50</h2>
-      </div>
-      <div>
-        <h2>51</h2>
-      </div>
-      <div>
-        <h2>52</h2>
-      </div>
-      <div>
-        <h2>53</h2>
-      </div>
-      <div>
-        <h2>54</h2>
-      </div>
-      <div>
-        <h2>55</h2>
-      </div>
-      <div>
-        <h2>56</h2>
-      </div>
-      <div>
-        <h2>57</h2>
-      </div>
-      <div>
-        <h2>58</h2>
-      </div>
-      <div>
-        <h2>59</h2>
-      </div>
-      <div>
-        <h2>60</h2>
-      </div>
-      <div>
-        <h2>61</h2>
-      </div>
-      <div>
-        <h2>62</h2>
-      </div>
-      <div>
-        <h2>63</h2>
-      </div>
-      <div>
-        <h2>64</h2>
-      </div>
-      <div>
-        <h2>65</h2>
-      </div>
-      <div>
-        <h2>66</h2>
-      </div>
-      <div>
-        <h2>67</h2>
-      </div>
-      <div>
-        <h2>68</h2>
-      </div>
-      <div>
-        <h2>69</h2>
-      </div>
-      <div>
-        <h2>70</h2>
-      </div>
-      <div>
-        <h2>71</h2>
-      </div>
-      <div>
-        <h2>72</h2>
-      </div>
-      <div>
-        <h2>73</h2>
-      </div>
-      <div>
-        <h2>74</h2>
-      </div>
-      <div>
-        <h2>75</h2>
-      </div>
-      <div>
-        <h2>76</h2>
-      </div> -->
-    </div>
+    <div class="full-board"></div>
     <div class="random-number-area">
       <div>
         <input
@@ -252,17 +23,6 @@
     </div>
 
     <script>
-      window.onload = function () {
-        const fullBoard = document.getElementsByClassName("full-board");
-        for (let i = 0; i < 76; i++) {
-          const newNumberBox = document.createElement("div");
-          const newH2 = document.createElement("h2");
-          newNumberBox.classList.add("box" + [i]);
-          newH2.innerText = [i + 1];
-          newNumberBox.appendChild(newH2);
-          fullBoard.appendChild(newNumberBox);
-        }
-      };
       const chosenNumberDiv = document.getElementById("chosen-number");
 
       const getARandomNumber = function () {
@@ -271,7 +31,24 @@
         chosenNumberDiv.innerHTML = randomNumber;
       };
 
-      const highlightNumber = function () {};
+      // const highlightNumber = function () {};
+
+      const createBoard = function () {
+        for (let i = 0; i < 76; i++) {
+          const fullBoard = document.querySelector(".full-board");
+          console.log(fullBoard);
+          const newNumberBox = document.createElement("div");
+          const newH2 = document.createElement("h2");
+          newNumberBox.classList.add("box" + [i]);
+          newH2.innerText = [i + 1];
+          newNumberBox.appendChild(newH2);
+          fullBoard.appendChild(newNumberBox);
+        }
+      };
+
+      window.onload = function () {
+        createBoard();
+      };
     </script>
   </body>
 </html>
