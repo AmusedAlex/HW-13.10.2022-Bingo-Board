@@ -32,7 +32,7 @@
 
     <script>
       const numbersAvailable = [];
-      const playerNumbers = numbersAvailable;
+      const playerNumbers = [];
 
       const getARandomNumber = function () {
         const h3 = document.querySelector("h3");
@@ -74,6 +74,7 @@
           fullBoard.appendChild(newNumberBox);
 
           numbersAvailable.push(i + 1);
+          playerNumbers.push(i + 1);
         }
       };
 
