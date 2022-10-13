@@ -32,6 +32,7 @@
 
     <script>
       const numbersAvailable = [];
+      const playerNumbers = numbersAvailable;
 
       const getARandomNumber = function () {
         const h3 = document.querySelector("h3");
@@ -39,7 +40,7 @@
           numbersAvailable[Math.floor(Math.random() * numbersAvailable.length)];
         let indexOf = numbersAvailable.indexOf(randomNumber);
         numbersAvailable.splice(indexOf, 1);
-        h3.innerHTML = "Your Number is: " + randomNumber;
+        h3.innerHTML = randomNumber;
 
         let boxToHighlight = document.getElementById(
           "box" + (randomNumber - 1)
@@ -49,7 +50,6 @@
 
       const createPlayerBoard = function () {
         for (let i = 0; i < 24; i++) {
-          const playerNumbers = numbersAvailable;
           let randomNumber =
             playerNumbers[Math.floor(Math.random() * playerNumbers.length)];
           let indexOf = playerNumbers.indexOf(randomNumber);
