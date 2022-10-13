@@ -8,7 +8,7 @@ h1 {
 }
 h2 {
   margin: 0;
-  font-size: 15pt;
+  font-size: 11pt;
   position: absolute;
   text-align: center;
   line-height: 0;
@@ -20,24 +20,24 @@ h2 {
 
 .full-board {
   margin-inline: auto;
-  width: 400px;
+  width: 598px;
   margin-block-start: 2rem;
 }
 .full-board div {
   display: inline-block;
   position: relative;
-  width: 10%;
+  width: 4%;
   aspect-ratio: 1/1;
   border: 1px solid black;
   border-radius: 3px;
-  background-color: rgb(126, 135, 126);
+  background-color: rgb(160, 170, 160);
   margin-left: 4px;
 }
 
-#highlight-number {
-  background-color: yellowgreen;
-  border: 1px solid green;
-  border-radius: 3px;
+.highlight-number {
+  background-color: yellowgreen !important;
+  border: 1px solid green !important;
+  border-radius: 3px !important;
 }
 
 #random-number-area {
@@ -51,8 +51,24 @@ h2 {
 }
 h3 {
   margin: 0;
-  font-size: 15pt;
+  font-size: 12pt;
   position: absolute;
   text-align: center;
   line-height: 0;
+}
+
+.player-boards {
+  margin-inline: auto;
+  width: 331px;
+  margin-block-start: 2rem;
+}
+.player-boards div {
+  display: inline-block;
+  position: relative;
+  width: 10%;
+  aspect-ratio: 1/1;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: rgb(160, 170, 160);
+  margin-left: 4px;
 }

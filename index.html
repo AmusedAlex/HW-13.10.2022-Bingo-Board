@@ -12,6 +12,13 @@
     <div class="full-board"></div>
     <div id="random-number-area">
       <div>
+        <input type="number" name="quantityPlayers" id="input-field" />
+        <input
+          onclick="createPlayerBoard()"
+          id="addPlayer-button"
+          type="button"
+          value="Add Players"
+        />
         <input
           onclick="getARandomNumber()"
           id="random-button"
@@ -21,23 +28,41 @@
       </div>
       <div id="chosen-number"><h3></h3></div>
     </div>
+    <div class="player-boards"></div>
 
     <script>
       const numbersAvailable = [];
+
       const getARandomNumber = function () {
         const h3 = document.querySelector("h3");
         let randomNumber =
           numbersAvailable[Math.floor(Math.random() * numbersAvailable.length)];
         let indexOf = numbersAvailable.indexOf(randomNumber);
         numbersAvailable.splice(indexOf, 1);
-        h3.innerHTML = randomNumber;
+        h3.innerHTML = "Your Number is: " + randomNumber;
 
         let boxToHighlight = document.getElementById(
           "box" + (randomNumber - 1)
         );
-        boxToHighlight.setAttribute("id", "highlight-number");
+        boxToHighlight.setAttribute("class", "highlight-number");
       };
 
+      const createPlayerBoard = function () {
+        for (let i = 0; i < 24; i++) {
+          const playerNumbers = numbersAvailable;
+          let randomNumber =
+            playerNumbers[Math.floor(Math.random() * playerNumbers.length)];
+          let indexOf = playerNumbers.indexOf(randomNumber);
+          const chosenNumber = playerNumbers.splice(indexOf, 1);
+          const playerBoard = document.querySelector(".player-boards");
+          const newNumberBox = document.createElement("div");
+          const newH2 = document.createElement("h2");
+          newNumberBox.setAttribute("id", "box" + [i + 76]);
+          newH2.innerText = chosenNumber;
+          newNumberBox.appendChild(newH2);
+          playerBoard.appendChild(newNumberBox);
+        }
+      };
       const createBoard = function () {
         for (let i = 0; i < 76; i++) {
           const fullBoard = document.querySelector(".full-board");
@@ -47,6 +72,7 @@
           newH2.innerText = [i + 1];
           newNumberBox.appendChild(newH2);
           fullBoard.appendChild(newNumberBox);
+
           numbersAvailable.push(i + 1);
         }
       };
