@@ -10,7 +10,7 @@
   <body>
     <h1>Bingo Board</h1>
     <div class="full-board"></div>
-    <div class="random-number-area">
+    <div id="random-number-area">
       <div>
         <input
           onclick="getARandomNumber()"
@@ -19,30 +19,35 @@
           value="Get a Number"
         />
       </div>
-      <div id="chosen-number"></div>
+      <div id="chosen-number"><h3></h3></div>
     </div>
 
     <script>
-      const chosenNumberDiv = document.getElementById("chosen-number");
-
+      const numbersAvailable = [];
       const getARandomNumber = function () {
-        let randomNumber = Math.round(Math.random() * 76);
+        const h3 = document.querySelector("h3");
+        let randomNumber =
+          numbersAvailable[Math.floor(Math.random() * numbersAvailable.length)];
+        let indexOf = numbersAvailable.indexOf(randomNumber);
+        numbersAvailable.splice(indexOf, 1);
+        h3.innerHTML = randomNumber;
 
-        chosenNumberDiv.innerHTML = randomNumber;
+        let boxToHighlight = document.getElementById(
+          "box" + (randomNumber - 1)
+        );
+        boxToHighlight.setAttribute("id", "highlight-number");
       };
-
-      // const highlightNumber = function () {};
 
       const createBoard = function () {
         for (let i = 0; i < 76; i++) {
           const fullBoard = document.querySelector(".full-board");
-          console.log(fullBoard);
           const newNumberBox = document.createElement("div");
           const newH2 = document.createElement("h2");
-          newNumberBox.classList.add("box" + [i]);
+          newNumberBox.setAttribute("id", "box" + [i]);
           newH2.innerText = [i + 1];
           newNumberBox.appendChild(newH2);
           fullBoard.appendChild(newNumberBox);
+          numbersAvailable.push(i + 1);
         }
       };
 

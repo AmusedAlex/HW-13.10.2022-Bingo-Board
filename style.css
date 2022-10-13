@@ -23,7 +23,7 @@ h2 {
   width: 400px;
   margin-block-start: 2rem;
 }
-.full-board > div {
+.full-board div {
   display: inline-block;
   position: relative;
   width: 10%;
@@ -31,15 +31,16 @@ h2 {
   border: 1px solid black;
   border-radius: 3px;
   background-color: rgb(126, 135, 126);
+  margin-left: 4px;
 }
 
 #highlight-number {
   background-color: yellowgreen;
-  border: 2px solid green;
+  border: 1px solid green;
   border-radius: 3px;
 }
 
-.random-number-area {
+#random-number-area {
   display: flex;
   justify-content: center;
   margin-top: 2em;
