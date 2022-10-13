@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Bingo Board exclusive</h1>
+    <h1>Bingo Board</h1>
     <div class="full-board">
-      <div>
+      <!-- <div>
         <h2>1</h2>
       </div>
       <div>
@@ -237,7 +237,7 @@
       </div>
       <div>
         <h2>76</h2>
-      </div>
+      </div> -->
     </div>
     <div class="random-number-area">
       <div>
@@ -248,16 +248,30 @@
           value="Get a Number"
         />
       </div>
-      <div id="chosen-number"><h3>Press Button to roll</h3></div>
+      <div id="chosen-number"></div>
     </div>
 
     <script>
-      const getARandomNumber = function () {
-        const chosenNumber = document.getElementById("chosen-number");
-        const randomNumber = Math.round(Math.random() * 76);
-        console.log(randomNumber);
-        chosenNumber.appendChild("h3").randomNumber;
+      window.onload = function () {
+        const fullBoard = document.getElementsByClassName("full-board");
+        for (let i = 0; i < 76; i++) {
+          const newNumberBox = document.createElement("div");
+          const newH2 = document.createElement("h2");
+          newNumberBox.classList.add("box" + [i]);
+          newH2.innerText = [i + 1];
+          newNumberBox.appendChild(newH2);
+          fullBoard.appendChild(newNumberBox);
+        }
       };
+      const chosenNumberDiv = document.getElementById("chosen-number");
+
+      const getARandomNumber = function () {
+        let randomNumber = Math.round(Math.random() * 76);
+
+        chosenNumberDiv.innerHTML = randomNumber;
+      };
+
+      const highlightNumber = function () {};
     </script>
   </body>
 </html>
